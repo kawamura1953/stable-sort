@@ -20,7 +20,7 @@ newlib・glibc の qsort の性能を比較すると、
 さて、私が用意したほとんどのソート条件において、ssortはglibcのqsortより高速です。
 qs_glibcとss14g1を実行したときの 比較関数の呼出し回数・実行時間 を以下に示します。
 qs_glibcは、glibcのqsortを実験用に改造したものです。
-使用したプログラムは github.com/kawamura1953/stable-sort にあります。
+使用したプログラムは https://github.com/kawamura1953/stable-sort にあります。
 
 なぜglibcのqsortはマージソートを採用しているのでしょうか？
 「最悪計算時間が短いから」では補えないほど、平均計算時間が遅いと思うのですが・・・
