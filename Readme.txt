@@ -1,4 +1,4 @@
-タイトル　：　qsortの実装はなぜマージソート？　高速で安定なソートとは？
+タイトル　：　qsortの実装はなぜマージソート？ 高速な安定ソートとは？
 
 
 安定な比較ソートssort(stable sort)(ss14g1)を作成しました。
@@ -92,13 +92,12 @@ ssortのベンチマークテストの要領
 
 ２．benchmark.sh を実行する。実行結果は benchmark.txt へ書き込まれる。
 
-　　main_prog.c（benchmark.shの中でコンパイル・実行）の引数と出力の説明は、
-　　Readme2.txtを参照。
+　　main_prog.c は benchmark.sh の中でコンパイル・実行されます。
+　　これの引数と出力の説明は、Readme2.txtを参照。
 
 
 ３．その他のファイル
 
-    Readme.txt    : このファイル
-    Readme2.txt   : より詳細な説明
-    Qiita.txt     : Qiitaへ投稿した文章
-    benchmark.txt : ベンチマークテストの結果
+    Readme.txt       : このファイル
+    Readme2.txt      : より詳細な説明
+    bench-sample.txt : ベンチマークテスト結果の例
