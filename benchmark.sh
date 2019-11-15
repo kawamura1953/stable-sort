@@ -8,7 +8,7 @@ cc  -O  -o ss14g1    -w   main_prog.c      ss14g1.o
 
 prin=benchmark
 
-echo '----------------- benchmark.txt begin -------------------- '   >>$prin.txt
+echo '----------------- benchmark.txt begin -------------------- '    >$prin.txt
 echo ' '                                                             >>$prin.txt
 echo 'キー種別:乱数　要素数:1万個　要素サイズ:8,20,400byte '         >>$prin.txt
 time ./qs_glibc    -3    10000     0       5000   -1  -1  -1  0      >>$prin.txt

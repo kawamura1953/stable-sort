@@ -20,6 +20,10 @@ unsigned int ass_cnt; /*代入回数を計測しないときは、削除可能*/
 #include <string.h>
 #include <unistd.h>
 //#include <memcpy.h>
+#ifndef _PTR
+#define	_PTR		void *
+#endif
+
 _PTR	 _EXFUN(mempcpy,(_PTR, const _PTR, size_t));
 typedef int (*__compar_d_fn_t) (const void *, const void *, void *);
 
