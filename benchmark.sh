@@ -10,7 +10,7 @@ prin=benchmark
 
 echo '----------------- benchmark.txt begin -------------------- '    >$prin.txt
 echo ' '                                                             >>$prin.txt
-echo 'キー種別:乱数　要素数:1万個　要素サイズ:8,20,400byte '         >>$prin.txt
+echo 'キー種別:同値なし　要素数:1万個　要素サイズ:8,20,400byte '     >>$prin.txt
 time ./qs_glibc    -3    10000     0       5000   -1  -1  -1  0      >>$prin.txt
 time ./ss14g1      -3    10000     0       5000   -1  -1  -1  0      >>$prin.txt
 echo ' '                                                             >>$prin.txt

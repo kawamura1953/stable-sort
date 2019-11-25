@@ -1,9 +1,12 @@
 // メモリが足りないとき(179行目)、エラーで終了するように改造してあります。
 
-#include <stdio.h>
+#include <alloca.h>
+#include <stdint.h>
 #include <stdlib.h>
-#define __mempcpy  mempcpy
+#include <string.h>
+#include <unistd.h>
 
+#include <stdio.h>
 static void die(char *s) {fprintf(stderr, "++++ %s ++++\n", s); printf("++++ %s ++++ \n", s); exit(1);}
 
 #ifdef DEBUG
@@ -13,19 +16,12 @@ unsigned int ass_cnt; /*代入回数を計測しないときは、削除可能*/
 #define pppppp(x,c)
 #endif
 
-
-#include <alloca.h>
-#include <stdint.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-//#include <memcpy.h>
-#ifndef _PTR
-#define	_PTR		void *
-#endif
-
-_PTR	 _EXFUN(mempcpy,(_PTR, const _PTR, size_t));
+//void *memcpy(void *, const void *, size_t);  //memcpyの宣言がないときはこの行を生かす。
+void *__mempcpy(void *, const void *, size_t);  //__mempcpyの宣言がないときはこの行を生かす。
+//__mempcpyの実体が存在しないときは、上の行を殺して、下の行を生かす。
+//void *__mempcpy(void *dest, const void *src, size_t len) {return memcpy(dest, src, len) + len;}
 typedef int (*__compar_d_fn_t) (const void *, const void *, void *);
+typedef int (*__compar_fn_t) (const void *, const void *);
 
 struct msort_param
 {
